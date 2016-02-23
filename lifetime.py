@@ -32,15 +32,14 @@ def main():
 
   age = (year, month, day, hour, minute, second, 1, 52 , 0)
   now = gmtime()
-  print strftime("%Y-%m-%d %H:%M:%S", now)
-  print strftime("%Y-%m-%d %H:%M:%S", age)
-  # print strftime("%Y-%m-%d %H:%M:%S", now-age)
-  print time.mktime( now )/(60*60*24*30*12)
-  print time.mktime( age )
+  # print (strftime("%Y-%m-%d %H:%M:%S", now))
+  # print (strftime("%Y-%m-%d %H:%M:%S", age))
+  # print (time.mktime( now )/(60*60*24*30*12))
+  # print (time.mktime( age ))
 
   secs = time.mktime( now ) - time.mktime( age )
-  print "Voce viveu exatamente: %d segundos" %  (secs)
-  print "Voce viveu aproximadamente: %f anos" %  (secs/(60*60*24*30*12))
+  print ("Voce viveu exatamente: %d segundos" %  (secs))
+  print ("Voce viveu aproximadamente: %f anos" %  (secs/(60*60*24*365)))
   # print "asctime(localtime(secs)): %s" % time.asctime(time.localtime(secs)
 
 
