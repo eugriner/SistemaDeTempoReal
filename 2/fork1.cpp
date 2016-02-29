@@ -78,5 +78,7 @@ int main ()
     }
     printf("KILL - Pai\n");
   }
+  // espera todas os processos terminarem evita impressao do fim do programa
+  sleep(17);
   exit (0);
 }
