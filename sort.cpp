@@ -6,7 +6,6 @@
 #include <algorithm>
 #define SIZE 100000
 
-
 void quickSort(int *, int, int);
 void mergeSort(int *, int, int);
 void bubbleSort(int *, int, int);
@@ -127,25 +126,5 @@ void calcPrint(void (*func)(int *, int, int)){
     time2 = time ( (time_t *) 0);
     clock2 = clock();
 
-    printf("Vetor ordenado de forma decrescente: %fs\n", (double)((clock2-clock1)/(double)CLOCKS_PER_SEC));
-
-    time1 = time( (time_t *) 0);
-    clock1 = clock();
-    (*func)(vec, 0, SIZE - 1);
-    time2 = time ( (time_t *) 0);
-    clock2 = clock();
-
-    printf("Vetor ordenado de forma crescente: %fs\n", (double)((clock2-clock1)/(double)CLOCKS_PER_SEC));
-
-    std::srand (1);
-    std::random_shuffle (&vec[0], &vec[SIZE]);
-
-    time1 = time( (time_t *) 0);
-    clock1 = clock();
-    (*func)(vec, 0, SIZE - 1);
-    time2 = time ( (time_t *) 0);
-    clock2 = clock();
-
-    printf("Vetor nao ordenado: %fs\n", (double)((clock2-clock1)/(double)CLOCKS_PER_SEC));
+    printf("Tempo: %fs\n", (double)((clock2-clock1)/(double)CLOCKS_PER_SEC));
 }
-
