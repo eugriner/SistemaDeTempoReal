@@ -6,18 +6,18 @@ from time import gmtime, strftime, struct_time
 
 def main():
   print("Data de nascimento")
-  # day = input('Dia: ')
-  # month = input('Mes: ')
-  # year = input('Ano: ')
-  # hour = input('Hora: ')
-  # minute = input('Minuto: ')
-  # second = input('Segundo: ')
-  day = 28
-  month = 6
-  year = 1989
-  hour = 0
-  minute = 0
-  second = 0
+  day = input('Dia: ')
+  month = input('Mes: ')
+  year = input('Ano: ')
+  hour = input('Hora: ')
+  minute = input('Minuto: ')
+  second = input('Segundo: ')
+  # day = 1
+  # month = 3
+  # year = 2016
+  # hour = 9
+  # minute = 33
+  # second = 0
   # day = 1
   # month = 1
   # year = 1970
@@ -45,7 +45,7 @@ def main():
 
   # print (time.mktime( now ))
   # print (time.mktime( age ))
-  secs = time.mktime( now ) - time.mktime( age )
+  secs = time.mktime( now ) - 60*60*3 - time.mktime( age )
   print ("Voce viveu exatamente: %d segundos" %  (secs))
   print ("Voce viveu aproximadamente: %f anos" %  (secs/(60*60*24*365)))
   # print "asctime(localtime(secs)): %s" % time.asctime(time.localtime(secs)

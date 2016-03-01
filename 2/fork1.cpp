@@ -26,14 +26,14 @@ int main ()
     for(i=1;i<10;i++) {
       sleep(1);
       printf("--%d) Filho1 \n", i);
-      // system("ps -f | grep fork1 &");
+      system("pstree -p | grep fork1");
       if (i == 8){
         pidn1 = fork();
         if (pidn1 == 0) {
           for(j=1;j<10;j++) {
             sleep(1);
             printf("----%d) Neto1 \n", j);
-            // system("ps -f | grep fork1 &");
+            system("pstree -p | grep fork1");
           }
           printf("----KILL - Neto1\n");
           return 0;
@@ -53,7 +53,7 @@ int main ()
             for(j=1;j<10;j++) {
               sleep(1);
               printf("--%d) Filho2 \n", j);
-              // system("ps -f | grep fork1 &");
+              system("pstree -p | grep fork1");
               if (j == 8)
               {
                 pidn2 = fork(); // Cria Neto 2
@@ -62,7 +62,7 @@ int main ()
                   for(k=1;k<10;k++) {
                     sleep(1);
                     printf("----%d) Neto2 \n", k);
-                    // system("ps -f | grep fork1 &");
+                    system("pstree -p | grep fork1");
                   }
                   printf("----KILL - Neto2\n");
                   return 0;
