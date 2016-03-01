@@ -119,7 +119,7 @@ void calcPrint(void (*func)(int *, int, int)){
     clock_t clock1, clock2;
 
     for (i = SIZE - 1; i < -1; i--)
-        vec[i] = j;
+        vec[i] = j++;
 
     time1 = time( (time_t *) 0);
     clock1 = clock();
@@ -127,7 +127,7 @@ void calcPrint(void (*func)(int *, int, int)){
     time2 = time ( (time_t *) 0);
     clock2 = clock();
 
-    printf("Pior caso: %fs\n", (double)((clock2-clock1)/(double)CLOCKS_PER_SEC));
+    printf("Vetor ordenado de forma decrescente: %fs\n", (double)((clock2-clock1)/(double)CLOCKS_PER_SEC));
 
     time1 = time( (time_t *) 0);
     clock1 = clock();
@@ -135,7 +135,7 @@ void calcPrint(void (*func)(int *, int, int)){
     time2 = time ( (time_t *) 0);
     clock2 = clock();
 
-    printf("Melhor caso: %fs\n", (double)((clock2-clock1)/(double)CLOCKS_PER_SEC));
+    printf("Vetor ordenado de forma crescente: %fs\n", (double)((clock2-clock1)/(double)CLOCKS_PER_SEC));
 
     std::srand (1);
     std::random_shuffle (&vec[0], &vec[SIZE]);
@@ -146,5 +146,6 @@ void calcPrint(void (*func)(int *, int, int)){
     time2 = time ( (time_t *) 0);
     clock2 = clock();
 
-    printf("Caso medio: %fs\n", (double)((clock2-clock1)/(double)CLOCKS_PER_SEC));
+    printf("Vetor nao ordenado: %fs\n", (double)((clock2-clock1)/(double)CLOCKS_PER_SEC));
 }
+
